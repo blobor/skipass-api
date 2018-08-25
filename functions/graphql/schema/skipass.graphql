@@ -1,0 +1,6 @@
+type Skipass {
+    plan: String!
+    cardNumber: String!
+    ticketNumber: String!
+    purchaseDate: Time!
+}

@@ -1,0 +1,15 @@
+{
+  "name": "playground-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "aws-lambda": "^0.1.2",
+    "graphql-playground-middleware-lambda": "^1.7.3"
+  }
+}

@@ -1,0 +1,33 @@
+service: skipass
+
+provider:
+  name: aws
+  runtime: go1.x
+  memorySize: 512
+  region: eu-central-1
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./functions/graphql/bin/**
+    - ./functions/playground/**
+
+functions:
+  graphql:
+    handler: functions/graphql/bin/graphql
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+  playground:
+    runtime: nodejs8.10
+    handler: functions/playground/handler.playgroundHandler
+    events:
+      - http:
+          path: playground
+          method: get
+          cors: true
+    environment:
+      APP_GRAPHQL_ENDPOINT: /graphql
