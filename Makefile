@@ -18,4 +18,7 @@ build: ; $(info $(M) Building All project...)
 deploy: clean build ; $(info $(M) Deploying project... )
 	npx serverless deploy
 
-.PHONY: vet test clean build deploy
+start: clean build ; $(info $(M) Starting all projects... )
+	npx sam local start-api
+
+.PHONY: vet test clean build deploy start
